@@ -715,6 +715,321 @@
             .header { flex-direction: column; gap: 15px; text-align: center; }
             .config-grid { grid-template-columns: 1fr; }
         }
+
+        /* ===== 坚果云按钮 ===== */
+        .btn-cloud {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            color: white;
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-cloud:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        .btn-cloud.active {
+            background: linear-gradient(135deg, #ffa500, #ff6b6b);
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.5);
+        }
+
+        /* ===== WebDAV 面板 ===== */
+        .webdav-panel {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            animation: expandIn 0.4s ease-out;
+        }
+
+        .webdav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .webdav-header h3 {
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .webdav-config {
+            margin-bottom: 20px;
+        }
+
+        .webdav-file-list {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 2px dashed #e0e0e0;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .webdav-empty {
+            text-align: center;
+            color: #888;
+            padding: 40px 20px;
+            font-size: 1.1em;
+        }
+
+        .webdav-loading {
+            text-align: center;
+            color: #666;
+            padding: 40px 20px;
+        }
+
+        .webdav-error {
+            text-align: center;
+            color: #dc3545;
+            padding: 20px;
+            background: rgba(220, 53, 69, 0.1);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .webdav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.95));
+            border: 1px solid rgba(108, 99, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .webdav-item:hover {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(76, 201, 240, 0.1));
+            transform: translateX(5px);
+            border-color: rgba(108, 99, 255, 0.3);
+        }
+
+        .webdav-item-icon {
+            font-size: 1.8em;
+            margin-right: 12px;
+        }
+
+        .webdav-item-info {
+            flex: 1;
+        }
+
+        .webdav-item-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .webdav-item-meta {
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .webdav-item-action {
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            background: linear-gradient(135deg, #6C63FF, #4CC9F0);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .webdav-item-action:hover {
+            transform: scale(1.05);
+            box-shadow: 0 3px 10px rgba(108, 99, 255, 0.4);
+        }
+
+        .webdav-folder {
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 107, 107, 0.1));
+        }
+
+        .webdav-folder .webdav-item-action {
+            background: linear-gradient(135deg, #ffa500, #ff6b6b);
+        }
+
+        .webdav-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: rgba(108, 99, 255, 0.05);
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        .webdav-breadcrumb-item {
+            color: #6C63FF;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .webdav-breadcrumb-item:hover {
+            background: rgba(108, 99, 255, 0.1);
+        }
+
+        .webdav-breadcrumb-separator {
+            color: #ccc;
+        }
+
+        .webdav-upload {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed #e0e0e0;
+        }
+
+        .webdav-upload-header {
+            margin-bottom: 15px;
+        }
+
+        .webdav-upload-header h4 {
+            color: #333;
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .webdav-upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: rgba(108, 99, 255, 0.02);
+        }
+
+        .webdav-upload-area.dragover {
+            border-color: #6C63FF;
+            background: rgba(108, 99, 255, 0.05);
+            transform: scale(1.02);
+        }
+
+        .webdav-upload-placeholder {
+            cursor: pointer;
+            padding: 20px;
+        }
+
+        .webdav-upload-placeholder:hover {
+            color: #6C63FF;
+        }
+
+        .webdav-upload-list {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .upload-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .upload-item-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .upload-item-info {
+            flex: 1;
+        }
+
+        .upload-item-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .upload-item-size {
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .upload-item-status {
+            font-size: 0.9em;
+            padding: 4px 12px;
+            border-radius: 15px;
+            margin-left: 10px;
+        }
+
+        .upload-item-status.pending {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .upload-item-status.uploading {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .upload-item-status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .upload-item-status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .upload-item-remove {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 10px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .upload-item-remove:hover {
+            opacity: 1;
+        }
+
+        .webdav-upload-progress {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .progress-info {
+            margin-bottom: 10px;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .progress-bar-container {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(135deg, #6C63FF, #4CC9F0);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
     </style>
 </head>
 <body>
@@ -766,8 +1081,79 @@
     <!-- 头部 -->
     <div class="header">
         <h1>🏠 HBMZU 智能家居监控系统</h1>
-        <div class="connection-status status-disconnected" id="connectionStatus" onclick="onConnectionStatusClick()">
-            ❌ 未连接
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <button class="btn-cloud" id="btnCloud" onclick="toggleWebDAVPanel()">☁️ 坚果云</button>
+            <div class="connection-status status-disconnected" id="connectionStatus" onclick="onConnectionStatusClick()">
+                ❌ 未连接
+            </div>
+        </div>
+    </div>
+
+    <!-- WebDAV 坚果云面板 -->
+    <div class="webdav-panel" id="webdavPanel" style="display: none;">
+        <div class="webdav-header">
+            <h3>☁️ 坚果云 WebDAV 照片查看</h3>
+            <button class="modal-close" onclick="toggleWebDAVPanel()">✕</button>
+        </div>
+        <div class="webdav-config">
+            <div class="config-grid">
+                <div class="config-field">
+                    <label>WebDAV 地址</label>
+                    <input type="text" id="webdavUrl" value="https://dav.jianguoyun.com/dav/" placeholder="例如：https://dav.jianguoyun.com/dav/">
+                </div>
+                <div class="config-field">
+                    <label>用户名</label>
+                    <input type="text" id="webdavUsername" value="463290399@qq.com" placeholder="坚果云用户名">
+                </div>
+                <div class="config-field">
+                    <label>密码</label>
+                    <input type="password" id="webdavPassword" value="aybb73q3638h695n" placeholder="坚果云密码/应用密码">
+                </div>
+            </div>
+            <div class="config-actions">
+                <button class="btn-connect connect" id="btnWebDAVConnect" onclick="connectWebDAV()">🔗 连接</button>
+                <button class="btn-connect disconnect" id="btnWebDAVDisconnect" onclick="disconnectWebDAV()" style="display:none;">🔌 断开</button>
+                <span id="webdavStatus" style="color:#888; font-size:0.9em; margin-left: 10px;"></span>
+            </div>
+        </div>
+        <div class="webdav-upload" id="webdavUpload" style="display: none;">
+            <div class="webdav-upload-header">
+                <h4>📤 上传文件到当前目录</h4>
+            </div>
+            <div class="webdav-upload-area" id="webdavUploadArea">
+                <input type="file" id="webdavFileInput" multiple style="display: none;" onchange="handleFileSelect(event)">
+                <div class="webdav-upload-placeholder" onclick="document.getElementById('webdavFileInput').click()">
+                    <div style="font-size: 3em; margin-bottom: 10px;">📁</div>
+                    <div style="color: #666;">点击选择文件或拖拽到此处</div>
+                    <div style="color: #999; font-size: 0.9em; margin-top: 5px;">支持多文件上传</div>
+                </div>
+                <div class="webdav-upload-list" id="webdavUploadList"></div>
+            </div>
+            <div class="webdav-upload-progress" id="webdavUploadProgress" style="display: none;">
+                <div class="progress-info" id="uploadProgressInfo"></div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="uploadProgressBar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="webdav-file-list" id="webdavFileList">
+            <div class="webdav-empty">请先连接坚果云 WebDAV</div>
+        </div>
+    </div>
+
+    <!-- 图片预览弹窗 -->
+    <div class="modal-overlay" id="imagePreviewModal">
+        <div class="modal-content" style="max-width: 90vw; max-height: 90vh;">
+            <div class="modal-header">
+                <h3 id="previewFileName">图片预览</h3>
+                <button class="modal-close" onclick="closeImagePreview()">✕</button>
+            </div>
+            <div style="text-align: center;">
+                <img id="previewImage" src="" alt="预览" style="max-width: 100%; max-height: 70vh; border-radius: 10px;">
+            </div>
+            <div style="margin-top: 15px; text-align: center;">
+                <a id="previewDownloadLink" href="#" download class="btn btn-auto" style="text-decoration: none; display: inline-block;">📥 下载图片</a>
+            </div>
         </div>
     </div>
 
@@ -1290,11 +1676,473 @@
         }
 
         // ==========================================
+        // WebDAV 坚果云功能
+        // ==========================================
+        let webdavConnected = false;
+        let webdavBaseUrl = '';
+        let webdavCurrentPath = '/';
+        let webdavCredentials = null;
+
+        function toggleWebDAVPanel() {
+            const panel = document.getElementById('webdavPanel');
+            const btn = document.getElementById('btnCloud');
+            if (panel.style.display === 'none') {
+                panel.style.display = 'block';
+                btn.classList.add('active');
+            } else {
+                panel.style.display = 'none';
+                btn.classList.remove('active');
+            }
+        }
+
+        function connectWebDAV() {
+            const url = document.getElementById('webdavUrl').value.trim();
+            const username = document.getElementById('webdavUsername').value.trim();
+            const password = document.getElementById('webdavPassword').value;
+
+            if (!url || !username || !password) {
+                showToast('请填写完整的 WebDAV 连接信息', 'error');
+                return;
+            }
+
+            webdavBaseUrl = url.replace(/\/$/, '');
+            webdavCredentials = btoa(username + ':' + password);
+            webdavCurrentPath = '/';
+
+            document.getElementById('webdavStatus').textContent = '正在连接...';
+            document.getElementById('btnWebDAVConnect').disabled = true;
+
+            listDirectory(webdavCurrentPath);
+        }
+
+        function disconnectWebDAV() {
+            webdavConnected = false;
+            webdavBaseUrl = '';
+            webdavCredentials = null;
+            webdavCurrentPath = '/';
+
+            document.getElementById('webdavStatus').textContent = '已断开';
+            document.getElementById('webdavStatus').style.color = '#dc3545';
+            document.getElementById('btnWebDAVConnect').style.display = 'inline-block';
+            document.getElementById('btnWebDAVConnect').disabled = false;
+            document.getElementById('btnWebDAVDisconnect').style.display = 'none';
+            document.getElementById('webdavFileList').innerHTML = '<div class="webdav-empty">请先连接坚果云 WebDAV</div>';
+        }
+
+        function listDirectory(path) {
+            const fileList = document.getElementById('webdavFileList');
+            fileList.innerHTML = '<div class="webdav-loading">⏳ 正在加载目录...</div>';
+
+            const targetUrl = webdavBaseUrl + path;
+
+            fetch(targetUrl, {
+                method: 'PROPFIND',
+                headers: {
+                    'Authorization': 'Basic ' + webdavCredentials,
+                    'Content-Type': 'application/xml',
+                    'Depth': '1'
+                },
+                body: '<?xml version="1.0" encoding="utf-8"?><d:propfind xmlns:d="DAV:"><d:prop><d:resourcetype/><d:getcontentlength/><d:getlastmodified/><d:displayname/></d:prop></d:propfind>'
+            })
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+                }
+                return response.text();
+            })
+            .then(function(xmlText) {
+                webdavConnected = true;
+                webdavCurrentPath = path;
+
+                document.getElementById('webdavStatus').textContent = '✅ 已连接';
+                document.getElementById('webdavStatus').style.color = '#28a745';
+                document.getElementById('btnWebDAVConnect').style.display = 'none';
+                document.getElementById('btnWebDAVDisconnect').style.display = 'inline-block';
+                showUploadArea();
+
+                parseAndDisplayFiles(xmlText, path);
+            })
+            .catch(function(error) {
+                console.error('WebDAV Error:', error);
+                fileList.innerHTML = '<div class="webdav-error">❌ 连接失败: ' + error.message + '</div>';
+                document.getElementById('webdavStatus').textContent = '❌ 连接失败';
+                document.getElementById('webdavStatus').style.color = '#dc3545';
+                document.getElementById('btnWebDAVConnect').disabled = false;
+                showToast('WebDAV 连接失败: ' + error.message, 'error');
+            });
+        }
+
+        function parseAndDisplayFiles(xmlText, currentPath) {
+            const fileList = document.getElementById('webdavFileList');
+            fileList.innerHTML = '<div style="margin-bottom: 15px;"><button class="btn btn-on" onclick="document.getElementById(\'webdavFileInput\').click();">📤 添加文件到上传队列</button> <button class="btn btn-auto" onclick="startUpload()">🚀 开始上传</button> <button class="btn btn-off" onclick="clearCompletedUploads()">🗑️ 清除已完成</button></div>' + fileList.innerHTML;
+
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(xmlText, 'application/xml');
+
+            const responses = xml.querySelectorAll('response');
+            const items = [];
+
+            responses.forEach(function(response) {
+                const href = response.querySelector('href');
+                const resourceType = response.querySelector('resourcetype');
+                const collection = resourceType ? resourceType.querySelector('collection') : null;
+                const displayName = response.querySelector('displayname') || href;
+                const contentLength = response.querySelector('getcontentlength');
+                const lastModified = response.querySelector('getlastmodified');
+
+                if (href) {
+                    let hrefValue = href.textContent;
+                    try {
+                        hrefValue = decodeURIComponent(hrefValue);
+                    } catch (e) {}
+
+                    const isFolder = collection !== null;
+                    const name = displayName ? displayName.textContent : hrefValue.split('/').pop();
+
+                    if (name && name !== '' && hrefValue !== currentPath) {
+                        const normalizedHref = hrefValue.startsWith('/') ? hrefValue : '/' + hrefValue;
+                        items.push({
+                            name: name,
+                            path: normalizedHref,
+                            isFolder: isFolder,
+                            size: contentLength ? parseInt(contentLength.textContent) : 0,
+                            lastModified: lastModified ? lastModified.textContent : ''
+                        });
+                    }
+                }
+            });
+
+            items.sort(function(a, b) {
+                if (a.isFolder !== b.isFolder) return a.isFolder ? -1 : 1;
+                return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+            });
+
+            let html = '';
+
+            if (currentPath !== '/') {
+                const parentPath = currentPath.split('/').slice(0, -1).join('/') || '/';
+                html += '<div class="webdav-item" onclick="navigateTo(\'' + parentPath + '\')">';
+                html += '<div class="webdav-item-icon">📁</div>';
+                html += '<div class="webdav-item-info"><div class="webdav-item-name">.. 返回上级目录</div></div>';
+                html += '</div>';
+            }
+
+            if (items.length === 0) {
+                html += '<div class="webdav-empty">📂 当前目录为空</div>';
+            } else {
+                items.forEach(function(item) {
+                    const icon = item.isFolder ? '📁' : getFileIcon(item.name);
+                    const sizeStr = item.isFolder ? '' : formatFileSize(item.size);
+                    const itemClass = item.isFolder ? 'webdav-item webdav-folder' : 'webdav-item';
+                    const action = item.isFolder ? '进入' : '预览';
+
+                    html += '<div class="' + itemClass + '">';
+                    html += '<div class="webdav-item-icon">' + icon + '</div>';
+                    html += '<div class="webdav-item-info">';
+                    html += '<div class="webdav-item-name">' + escapeHtml(item.name) + '</div>';
+                    html += '<div class="webdav-item-meta">' + sizeStr + (item.lastModified ? ' | ' + item.lastModified : '') + '</div>';
+                    html += '</div>';
+                    if (item.isFolder) {
+                        html += '<button class="webdav-item-action" onclick="event.stopPropagation(); navigateTo(\'' + item.path + '\')">' + action + '</button>';
+                    } else if (isImageFile(item.name)) {
+                        html += '<button class="webdav-item-action" onclick="event.stopPropagation(); previewImage(\'' + item.path + '\', \'' + escapeHtml(item.name) + '\')">' + action + '</button>';
+                    } else {
+                        html += '<button class="webdav-item-action" onclick="event.stopPropagation(); downloadFile(\'' + item.path + '\', \'' + escapeHtml(item.name) + '\')">下载</button>';
+                    }
+                    html += '</div>';
+                });
+            }
+
+            fileList.innerHTML = html;
+        }
+
+        function navigateTo(path) {
+            listDirectory(path);
+        }
+
+        function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const iconMap = {
+                'jpg': '🖼️', 'jpeg': '🖼️', 'png': '🖼️', 'gif': '🖼️', 'bmp': '🖼️', 'webp': '🖼️', 'svg': '🖼️',
+                'pdf': '📄',
+                'doc': '📝', 'docx': '📝', 'txt': '📝', 'rtf': '📝',
+                'xls': '📊', 'xlsx': '📊', 'csv': '📊',
+                'zip': '📦', 'rar': '📦', '7z': '📦', 'tar': '📦', 'gz': '📦',
+                'mp3': '🎵', 'wav': '🎵', 'flac': '🎵', 'aac': '🎵',
+                'mp4': '🎬', 'avi': '🎬', 'mkv': '🎬', 'mov': '🎬', 'wmv': '🎬',
+                'js': '💻', 'html': '💻', 'css': '💻', 'json': '💻', 'xml': '💻'
+            };
+            return iconMap[ext] || '📄';
+        }
+
+        function isImageFile(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            return ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg'].includes(ext);
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function previewImage(path, filename) {
+            const downloadUrl = webdavBaseUrl + path;
+            document.getElementById('previewFileName').textContent = filename;
+            document.getElementById('previewImage').src = downloadUrl;
+            document.getElementById('previewImage').style.opacity = '0.5';
+
+            document.getElementById('previewImage').onload = function() {
+                this.style.opacity = '1';
+            };
+            document.getElementById('previewImage').onerror = function() {
+                this.src = '';
+                this.alt = '图片加载失败';
+                showToast('无法加载图片: ' + filename, 'error');
+            };
+
+            const downloadLink = document.getElementById('previewDownloadLink');
+            downloadLink.href = downloadUrl;
+            downloadLink.download = filename;
+
+            document.getElementById('imagePreviewModal').classList.add('show');
+        }
+
+        function closeImagePreview() {
+            document.getElementById('imagePreviewModal').classList.remove('show');
+            document.getElementById('previewImage').src = '';
+        }
+
+        function downloadFile(path, filename) {
+            const downloadUrl = webdavBaseUrl + path;
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = filename;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('开始下载: ' + filename, 'info');
+        }
+
+        let uploadFiles = [];
+        let isUploading = false;
+
+        function showUploadArea() {
+            const uploadArea = document.getElementById('webdavUpload');
+            if (uploadArea) {
+                uploadArea.style.display = 'block';
+            }
+        }
+
+        function hideUploadArea() {
+            const uploadArea = document.getElementById('webdavUpload');
+            if (uploadArea) {
+                uploadArea.style.display = 'none';
+            }
+        }
+
+        function handleFileSelect(event) {
+            const files = event.target.files;
+            if (files.length > 0) {
+                addFilesToQueue(files);
+            }
+        }
+
+        function addFilesToQueue(files) {
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const fileObj = {
+                    file: file,
+                    name: file.name,
+                    size: file.size,
+                    status: 'pending',
+                    progress: 0
+                };
+                uploadFiles.push(fileObj);
+            }
+            renderUploadList();
+        }
+
+        function renderUploadList() {
+            const listEl = document.getElementById('webdavUploadList');
+            if (!listEl) return;
+
+            let html = '';
+            uploadFiles.forEach(function(item, index) {
+                const icon = getFileIcon(item.name);
+                const sizeStr = formatFileSize(item.size);
+                const statusClass = item.status;
+                const statusText = {
+                    'pending': '等待上传',
+                    'uploading': '上传中...',
+                    'success': '上传成功',
+                    'error': '上传失败'
+                }[item.status];
+
+                html += '<div class="upload-item" id="upload-item-' + index + '">';
+                html += '<div class="upload-item-icon">' + icon + '</div>';
+                html += '<div class="upload-item-info">';
+                html += '<div class="upload-item-name">' + escapeHtml(item.name) + '</div>';
+                html += '<div class="upload-item-size">' + sizeStr + '</div>';
+                html += '</div>';
+                html += '<span class="upload-item-status ' + statusClass + '">' + statusText + '</span>';
+                if (item.status === 'pending') {
+                    html += '<button class="upload-item-remove" onclick="removeFromQueue(' + index + ')">✕</button>';
+                }
+                html += '</div>';
+            });
+
+            listEl.innerHTML = html;
+        }
+
+        function removeFromQueue(index) {
+            uploadFiles.splice(index, 1);
+            renderUploadList();
+        }
+
+        function setupDragAndDrop() {
+            const uploadArea = document.getElementById('webdavUploadArea');
+            if (!uploadArea) return;
+
+            uploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.add('dragover');
+            });
+
+            uploadArea.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.remove('dragover');
+            });
+
+            uploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.remove('dragover');
+
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    addFilesToQueue(files);
+                }
+            });
+        }
+
+        function startUpload() {
+            if (uploadFiles.length === 0 || isUploading) return;
+
+            isUploading = true;
+            const pendingFiles = uploadFiles.filter(function(f) { return f.status === 'pending'; });
+
+            if (pendingFiles.length === 0) {
+                isUploading = false;
+                return;
+            }
+
+            const progressEl = document.getElementById('webdavUploadProgress');
+            const progressBar = document.getElementById('uploadProgressBar');
+            const progressInfo = document.getElementById('uploadProgressInfo');
+
+            progressEl.style.display = 'block';
+
+            let completed = 0;
+            let successCount = 0;
+            let errorCount = 0;
+
+            function updateProgress() {
+                const percent = Math.round((completed / uploadFiles.length) * 100);
+                progressBar.style.width = percent + '%';
+                progressInfo.textContent = '上传进度: ' + completed + '/' + uploadFiles.length + ' (' + percent + '%)';
+            }
+
+            function uploadNext(index) {
+                if (index >= pendingFiles.length) {
+                    isUploading = false;
+                    updateProgress();
+                    if (errorCount === 0) {
+                        showToast('所有文件上传成功！', 'success');
+                    } else {
+                        showToast('上传完成：' + successCount + ' 成功，' + errorCount + ' 失败', 'error');
+                    }
+                    setTimeout(function() {
+                        listDirectory(webdavCurrentPath);
+                    }, 1000);
+                    return;
+                }
+
+                const item = pendingFiles[index];
+                const fileIndex = uploadFiles.indexOf(item);
+                item.status = 'uploading';
+                renderUploadList();
+                updateProgress();
+
+                const destPath = webdavCurrentPath.endsWith('/') ? webdavCurrentPath + item.name : webdavCurrentPath + '/' + item.name;
+                const uploadUrl = webdavBaseUrl + destPath;
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('PUT', uploadUrl, true);
+
+                xhr.setRequestHeader('Authorization', 'Basic ' + webdavCredentials);
+
+                xhr.upload.onprogress = function(e) {
+                    if (e.lengthComputable) {
+                        const percent = Math.round((e.loaded / e.total) * 100);
+                        item.progress = percent;
+                        updateProgress();
+                    }
+                };
+
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        item.status = 'success';
+                        item.progress = 100;
+                        successCount++;
+                    } else {
+                        item.status = 'error';
+                        errorCount++;
+                    }
+                    completed++;
+                    renderUploadList();
+                    updateProgress();
+                    uploadNext(index + 1);
+                };
+
+                xhr.onerror = function() {
+                    item.status = 'error';
+                    errorCount++;
+                    completed++;
+                    renderUploadList();
+                    updateProgress();
+                    uploadNext(index + 1);
+                };
+
+                xhr.send(item.file);
+            }
+
+            uploadNext(0);
+        }
+
+        function clearCompletedUploads() {
+            uploadFiles = uploadFiles.filter(function(f) { return f.status !== 'success'; });
+            renderUploadList();
+        }
+
+        // ==========================================
         // 初始化
         // ==========================================
         document.addEventListener('DOMContentLoaded', function () {
             addLog('🌐 MQTT 传感器监控系统已加载（纯 HTML 版）');
             addLog('💡 点击右上角"未连接"按钮打开 MQTT 配置面板');
+            setupDragAndDrop();
         });
     </script>
 </body>
